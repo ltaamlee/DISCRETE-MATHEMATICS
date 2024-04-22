@@ -24,11 +24,13 @@ int main(){
 	cout<<"  DO THI VO HUONG \n";
 	cout<<"-------------------\n";
 //a. Cac cap dinh co canh song song
+	bool check[nmax][nmax]={0};
 	cout<<"Cap dinh co canh song song:\n";
 	for (int i=1; i<=n; ++i){
 		for (int j=1; j<=n; ++j){
-			if (a[i][j]==2){
+			if (a[i][j]==2 && check[i][j]==0){
 				st.insert(make_tuple(i,j));
+				check[j][i]=check[i][j]=1;
 			}
 		}
 	}
@@ -73,8 +75,8 @@ int main(){
 6
 0 1 1 1 0 0
 1 0 0 1 0 0
-1 0 0 1 1 1
-1 1 2 0 0 1
+1 0 0 2 1 1
+1 1 2 0 0 2
 0 0 1 0 0 1
 0 0 1 2 1 1
 */
