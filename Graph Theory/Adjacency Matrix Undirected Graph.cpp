@@ -9,8 +9,8 @@ void INPUT(int &n, int a[][nmax]){
 		}
 	}
 }
-void PARALLEL(set<tuple<int,int>> &st){
-	for (auto x: st){
+void PARALLEL(vector<tuple<int,int>> &v){
+	for (auto x: v){
 		tuple<int,int> t=x;
 		cout<<"("<<get<0>(x)<<","<<get<1>(x)<<")\n";
 	}
@@ -18,24 +18,24 @@ void PARALLEL(set<tuple<int,int>> &st){
 int main(){
 	ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0);
 	int n, a[nmax][nmax], cnt=0;
-	set <tuple<int,int>> st;
+	vector<tuple<int, int>> v;
 	INPUT(n,a);
-	cout<<"-------------------\n";
-	cout<<"  DO THI VO HUONG \n";
-	cout<<"-------------------\n";
+	cout<<"----------------------------\n";
+	cout<<" MA TRAN KE DO THI VO HUONG \n";
+	cout<<"----------------------------\n";
 //a. Cac cap dinh co canh song song
 	bool check[nmax][nmax]={0};
 	cout<<"Cap dinh co canh song song:\n";
 	for (int i=1; i<=n; ++i){
 		for (int j=1; j<=n; ++j){
 			if (a[i][j]==2 && check[i][j]==0){
-				st.insert(make_tuple(i,j));
+				v.push_back(make_tuple(i,j));
 				check[j][i]=check[i][j]=1;
 			}
 		}
 	}
-	if (st.size()>0)
-		PARALLEL(st);
+	if (v.size()>0)
+		PARALLEL(v);
 	else cout<<"Khong co!\n";
 	cout<<"------------------\n";
 //b. Bac cua cac dinh
@@ -52,7 +52,7 @@ int main(){
 	cout<<"Dinh treo: ";
 	for (int i=1; i<=n; ++i){
 		if (a[i][0]==1) {
-			cout<<i<<" ";
+			cout<<i<<"\n";
 			cnt++;
 		}
 	}
@@ -63,7 +63,7 @@ int main(){
 	cnt=0;
 	for (int i=1; i<=n; ++i){
 		if (a[i][0]==0){
-			cout<<i<<" ";
+			cout<<i<<"\n";
 			cnt++;
 		}
 	}
