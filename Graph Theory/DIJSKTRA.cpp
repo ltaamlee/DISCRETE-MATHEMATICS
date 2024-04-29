@@ -17,6 +17,10 @@ void INPUT(){
 void INIT(){
 	memset(d,inf,sizeof(d));
 	memset(check,false,sizeof(check));
+	for (int v=1; v<=n; ++v){
+		d[v]=w[s][v];
+		Truoc[v]=s;
+	}
 }
 int MIN_U(int n){
 	int u=-1, ming=inf;
@@ -43,10 +47,6 @@ void PATH(int s, int f){
 }
 void DIJSKTRA(int s){
 	INIT();
-	for (int v=1; v<=n; ++v){
-		d[v]=w[s][v];
-		Truoc[v]=s;
-	}
 	d[s]=0;
 	check[s]=true;
 	int cnt=n;
@@ -71,12 +71,6 @@ void DIJSKTRA(int s){
 int main(){
 	ios_base::sync_with_stdio(NULL); cin.tie(NULL); cout.tie(NULL);
 	INPUT();
-//	for (int i=1; i<=n; ++i){
-//		for (int j=1; j<=n; ++j){
-//			cout<<w[i][j]<<"\t"; 
-//		}
-//		cout<<"\n";
-//	}
 	cin>>s;
 	DIJSKTRA(s);
 	return 0;
