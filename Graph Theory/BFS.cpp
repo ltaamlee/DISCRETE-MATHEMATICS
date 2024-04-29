@@ -2,14 +2,14 @@
 #define nmax 1001
 using namespace std;
 int n,m,r;
-vector <int> ke[nmax], path;
+vector <int> Ke[nmax], T;
 bool ChuaXet[nmax];
 void INPUT(){
 	cin>>n>>m;
 	for (int i=0; i<m; ++i){
 		int x,y; cin>>x>>y;
-		ke[x].push_back(y);
-		ke[y].push_back(x);
+		Ke[x].push_back(y);
+		Ke[y].push_back(x);
 	}
 }
 void INIT(){
@@ -19,9 +19,9 @@ void BFS(int r){
 	queue <int> q; q.push(r); ChuaXet[r]=true;
 	while(!q.empty()){
 		int v=q.front();
-		path.push_back(v);
+		T.push_back(v);
 		q.pop();
-		for (auto u:ke[v]){
+		for (auto u:Ke[v]){
 			if (!ChuaXet[u]){
 				q.push(u);
 				ChuaXet[u]=true;
@@ -35,7 +35,7 @@ int main(){
 	INIT();
 	BFS(1);
 	cout<<"T = ";
-	for (auto i:path) cout<<i<<" ";
+	for (auto i:T) cout<<i<<" ";
 	return 0;
 }
 /*
