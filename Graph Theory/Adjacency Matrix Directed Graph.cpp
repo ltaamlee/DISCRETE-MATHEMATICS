@@ -15,6 +15,13 @@ void PARALLEL(vector<tuple<int,int>> &v){
 		cout<<"("<<get<0>(x)<<","<<get<1>(x)<<")\n";
 	}
 }
+int COL(int n, int k, int a[nmax][nmax]){
+	int t=0;
+	for (int i=1; i<=n; ++i){
+		t+=a[i][k];
+	}
+	return t;
+}
 int main(){
 	ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0);
 	int n, a[nmax][nmax], cnt=0;
@@ -58,9 +65,7 @@ int main(){
 		}
 	}
 	for (int i=1; i<=n; ++i){
-		for (int j=1; j<=n; ++j){
-			a[0][j]+=a[i][j];
-		}
+			a[0][i]=COL(n,i,a);
 	}
 	for (int i=1; i<=n; ++i){
 		cout<<"Ban bac trong cua dinh "<<i<<" : "<<a[0][i]<<"\n";
@@ -76,7 +81,7 @@ int main(){
 0 1 1 1 0 0
 0 0 0 1 0 0
 0 0 0 1 1 1
-0 0 1 0 0 1
+0 0 1 0 0 0
 0 0 0 0 0 1
 0 0 0 2 0 0
 */
