@@ -13,6 +13,6 @@
 - [Connected Component](https://github.com/ltaamlee/DISCRETE-MATHEMATICS/blob/main/Graph%20Theory/Connected%20Component.cpp)
 ## 🍀 *Tree*
 - Prim
-- [Krushal]()
+- [Krushal](https://github.com/ltaamlee/DISCRETE-MATHEMATICS/blob/main/Graph%20Theory/KRUSKAL.cpp)
 ## 🌌 *Euler - Hamilton*
 - [Cycle Euler](https://github.com/ltaamlee/DISCRETE-MATHEMATICS/blob/main/Graph%20Theory/Cycle%20EULER.cpp)
