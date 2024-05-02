@@ -10,8 +10,9 @@
 - [BFS Breadth First Search](https://github.com/ltaamlee/DISCRETE-MATHEMATICS/blob/main/Graph%20Theory/BFS.cpp)
 - [Bell-man Ford](https://github.com/ltaamlee/DISCRETE-MATHEMATICS/blob/main/Graph%20Theory/BELL-MAN%20FORD.cpp)
 - Floyd-Warshall
+- [Connected Component](https://github.com/ltaamlee/DISCRETE-MATHEMATICS/blob/main/Graph%20Theory/Connected%20Component.cpp)
 ## 🍀 *Tree*
 - Prim
-- Krushal
+- [Krushal]()
 ## 🌌 *Euler - Hamilton*
 - [Cycle Euler](https://github.com/ltaamlee/DISCRETE-MATHEMATICS/blob/main/Graph%20Theory/Cycle%20EULER.cpp)
