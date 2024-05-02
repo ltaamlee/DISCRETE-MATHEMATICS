@@ -3,6 +3,7 @@
 #define mmax 100
 using namespace std;
 map <tuple<int,int,int,int>,int> mp;
+map <tuple<int,int>,int> mp2;
 void INPUT(int &n, int &m, int a[nmax][mmax]){
     cin>>n>>m;
 	for (int i=1; i<=n; ++i){
@@ -19,6 +20,9 @@ void EDGE_P(int n, int k, int a[nmax][mmax]){
 			}
 		}
 	}	
+}
+bool cmp(int x, int y){
+	return x==y;
 }
 int main(){
 	ios_base::sync_with_stdio(NULL); cin.tie(NULL); cout.tie(NULL);
@@ -41,19 +45,19 @@ int main(){
 	cout<<"------------------\n";
 //b. Cac cap dinh co canh song song nguoc huong
 	cout<<"Cap dinh co canh song song nguoc huong:\n";
-	set<tuple<int,int>> st;
+	cnt=0;
 	for (auto i:mp){
 		if (i.second==1){
-			st.insert(make_tuple(get<0>(i.first),get<1>(i.first)));
+			mp2[make_tuple(get<0>(i.first),get<1>(i.first))]++;
+			cnt++;
 		}
 	}
-	if (st.size()==0) cout<<"Khong co!\n";
-	else{
-		for (auto x: st){
-			tuple<int,int> t=x;
-			cout<<"("<<get<0>(x)<<","<<get<1>(x)<<")\n";
+	for (auto i:mp2){
+		if (i.second==2){
+			cout<<"("<<get<0>(i.first)<<","<<get<1>(i.first)<<")"<<"\n";
 		}
 	}
+	if (cnt==0) cout<<"Khong co!\n";
 	cout<<"------------------\n";
 //c. Ban bac trong _ Ban bac ngoai
 	for (int i=1; i<=n; ++i){
@@ -82,6 +86,13 @@ int main(){
 4 5
 1 0 0 0 1
 -1 -1 1 0 -1
-0 1 -1 1 0
+0 1 -1 0 0
 0 0 0 0 0 
+
+5 7
+1 0 1 0 0 0 0
+-1 0 0 0 0 0 1
+0 -1 0 0 1 0 -1
+0 0 -1 1 0 1 0
+0 1 0 -1 -1 -1 0 
 */
